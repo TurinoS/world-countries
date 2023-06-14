@@ -1,5 +1,7 @@
+import { Header } from '@/components/header'
 import './globals.css'
 import { Nunito_Sans } from 'next/font/google'
+import { Footer } from '@/components/footer'
 
 const nunito = Nunito_Sans({ 
   weight: ['300', '600', '800'],
@@ -18,7 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={nunito.className}>{children}</body>
+      <body className={nunito.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
