@@ -1,0 +1,9 @@
+.select {
+    padding: .8em .3em;
+    width: 10vw;
+    background-color: var(--bg-dark-two);
+    border: none;
+    border-radius: .3em;
+    color: var(--font-dark);
+    font-size: 16px;
+}
