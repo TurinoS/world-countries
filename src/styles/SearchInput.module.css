@@ -1,6 +1,6 @@
 .input {
     padding: .8em 1em .8em 3em;
-    width: 30vw;
+    width: 400px;
     background-color: var(--bg-dark-two);
     border: none;
     border-radius: 2em;
@@ -19,4 +19,10 @@
     text-align: end;
     margin: 7px;
     font-size: 30px;
+}
+
+@media (max-width: 540px) {
+    .input {
+        width: 100%;
+    }
 }
