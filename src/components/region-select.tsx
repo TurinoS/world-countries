@@ -7,7 +7,7 @@ interface SelectProps {
 export function RegionSelect(props: SelectProps) {
     return(
         <select className={styles.select} name='regions' id='regions'>
-            <option value='' disabled selected hidden>Filter by region</option>
+            <option defaultValue='' disabled hidden>Filter by region</option>
             <option value='africa'>Africa</option>
             <option value='america'>America</option>  
             <option value='asia'>Asia</option>  
