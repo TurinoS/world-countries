@@ -2,24 +2,21 @@ import { SearchInput } from '@/components/search-input';
 import styles from './page.module.css';
 import { RegionSelect } from '@/components/region-select';
 import { DisplayCountries } from '@/components/display-countries';
-import { stringify } from 'querystring';
 
-const getData = async () => {
+const getData = async () => {   
     
-  const data = await fetch(`https://restcountries.com/v3.1/all?fields=name,flags,region,population,capital,subregion,currencies,languages,borders,alpha3Code`);
+  const data = await fetch(`https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital,subregion,currencies,languages,borders`);
 
   if(!data.ok) {
     console.log(data)
   }
   
-  return data.json() 
-}
+  return await data.json() 
+};
 
 export default async function Home() {
 
   const data = await getData()
-
-  console.log(typeof(data))
 
   return (
     <main className={styles.main}>
@@ -28,7 +25,20 @@ export default async function Home() {
         <RegionSelect />
       </div>
 
-      <DisplayCountries name={data.name} />
+      <div className={styles.container}>
+        {data.map((country) => (
+          <DisplayCountries 
+            key={country.population}
+            flag={country.flags.png}
+            alt={country.flags.alt}
+            name={country.name.common} 
+            population={country.population}
+            region={country.region}
+            capital={country.capital}
+          />
+        ))}
+      </div>
+      
     </main>
   )
 }

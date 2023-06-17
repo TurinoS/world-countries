@@ -1,5 +1,5 @@
 .main {
-  padding: 6rem 10vw;
+  padding: 6rem 7.5vw;
   min-height: 100vh;
 }
 
@@ -7,6 +7,14 @@
   display: flex;
   justify-content: space-between;
   gap: 2em;
+}
+
+.container {
+  margin: 7.5vh 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2.5em;
 }
 
 @media (max-width: 540px) {
