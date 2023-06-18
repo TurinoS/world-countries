@@ -1,14 +1,14 @@
+import styles from '../styles/page.module.css';
 import { SearchInput } from '@/components/search-input';
-import styles from './page.module.css';
 import { RegionSelect } from '@/components/region-select';
 import { DisplayCountries } from '@/components/display-countries';
 
 const getData = async () => {   
     
-  const data = await fetch(`https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital,subregion,currencies,languages,borders`);
+  const data = await fetch(`https://restcountries.com/v3.1/all?fields=name,flags,population,region`);
 
   if(!data.ok) {
-    console.log(data)
+    return []
   }
   
   return await data.json() 
@@ -26,7 +26,7 @@ export default async function Home() {
       </div>
 
       <div className={styles.container}>
-        {data.map((country) => (
+        {data.map((country: any) => (
           <DisplayCountries 
             key={country.population}
             flag={country.flags.png}
@@ -38,7 +38,6 @@ export default async function Home() {
           />
         ))}
       </div>
-      
     </main>
   )
 }

@@ -5,8 +5,8 @@
     flex-direction: column;
     background-color: var(--bg-dark-two);
     border-radius: var(--border-radius);
-    color: var(--font-dark);
     text-decoration: none;
+    color: var(--font-dark);
 }
 
 .card img {

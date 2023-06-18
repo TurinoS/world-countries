@@ -14,7 +14,6 @@
 }
 
 .icon {
-    color: var(--font-dark);
     position: absolute;
     text-align: end;
     margin: 9px;

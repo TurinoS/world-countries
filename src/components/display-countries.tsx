@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import styles from '../styles/DisplayCoutries.module.css';
-
 interface DisplayProps {
     flag: string
     alt: string
@@ -12,7 +11,7 @@ interface DisplayProps {
 
 export function DisplayCountries(props: DisplayProps) {
     return(
-        <Link href={`/${props.population}`} className={styles.card}>
+        <Link href={`/${props.name}`} className={styles.card}>
             <img src={props.flag} alt={props.alt}/>
             <div className={styles.country_info}>
                 <h2>{props.name}</h2>
