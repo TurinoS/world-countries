@@ -3,14 +3,21 @@
     min-height: 100vh;
 }
 
-.main button {
-    margin-bottom: 7.5vh;
-    padding: .75em 2em;
-    background-color: var(--bg-dark-two);
+.main a {
     color: var(--font-dark);
-    border: none;
+    text-decoration: none;
+    background-color: var(--bg-dark-two);
+    padding: .5em 1em;
     border-radius: var(--border-radius);
     box-shadow: 2px 3px 6px 4px var(--shadow);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: .5em;
+}
+
+.icon {
+    font-size: 26px;
 }
 
 .container {
@@ -23,6 +30,7 @@
 .container img {
     width: 40vw;
     min-width: 450px;
+    margin-top: 7.5vh;
 }
 
 .info {
@@ -39,7 +47,7 @@
 }
 
 .info span {
-    font-weight: 600;
+    font-weight: 800;
 }
 
 .borders {
@@ -56,15 +64,6 @@
     flex-wrap: wrap;
     gap: 1em;
     row-gap: 3em;
-}
-
-.borders a {
-    color: var(--font-dark);
-    text-decoration: none;
-    background-color: var(--bg-dark-two);
-    padding: .5em 1.5em;
-    border-radius: var(--border-radius);
-    box-shadow: 2px 3px 6px 4px var(--shadow);
 }
 
 @media (max-width: 870px) {

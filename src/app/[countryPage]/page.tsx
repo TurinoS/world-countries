@@ -1,5 +1,9 @@
+"use client";
+
 import Link from 'next/link';
 import styles from '../../styles/CountryPage.module.css';
+import { usePathname } from 'next/navigation';
+import { MdOutlineKeyboardBackspace } from 'react-icons/md';
 
 const getData = async (name: string) => {   
     
@@ -14,7 +18,9 @@ const getData = async (name: string) => {
 
 export default async function CountryPage() {
 
-  const countryData = await getData('brazil')
+  const pathname = usePathname();
+
+  const countryData = await getData(pathname)
 
   const countryInfo = [
     countryData[0].name.official, 
@@ -26,12 +32,10 @@ export default async function CountryPage() {
     countryData[0].borders,
     countryData[0].name.common,
   ]
-
-  console.log(countryData[0])
   
   return (
     <main className={styles.main}>
-      <button>Back</button>
+      <Link href='/'><MdOutlineKeyboardBackspace className={styles.icon}/>Back</Link>
       <div className={styles.container}>
         <img src={countryData[0].flags.png} alt={countryData[0].flags.alt} />
         <div className={styles.info}>

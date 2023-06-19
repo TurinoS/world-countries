@@ -13,7 +13,7 @@ interface HeaderProps {
 export function Header(props: HeaderProps) {
     return(
         <header className={styles.header}>
-            <a href='#' className={saira.className}>World Countries</a>
+            <a href='/' className={saira.className}>World Countries</a>
             <p>Dark mode</p>
         </header>
     )
