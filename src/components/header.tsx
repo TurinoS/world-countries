@@ -6,11 +6,7 @@ const saira = Saira_Stencil_One({
     subsets: ['latin'] 
 })
 
-interface HeaderProps {
-
-}
-
-export function Header(props: HeaderProps) {
+export function Header() {
     return(
         <header className={styles.header}>
             <a href='/' className={saira.className}>World Countries</a>

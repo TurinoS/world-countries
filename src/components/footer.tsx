@@ -6,11 +6,7 @@ const saira = Saira_Stencil_One({
     subsets: ['latin'] 
 })
 
-interface FooterProps {
-
-}
-
-export function Footer(props: FooterProps) {
+export function Footer() {
     return(
         <footer className={styles.footer}>
             <p>Desenvolvido por <span className={saira.className}>Paulo Turino</span>.</p>
