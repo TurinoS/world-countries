@@ -1,0 +1,21 @@
+.container, .container div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.9vw;
+}
+
+.container a {
+    color: var(--font-dark);
+    text-decoration: none;
+    background-color: var(--bg-dark-two);
+    padding: .5em 1em;
+    border-radius: var(--border-radius);
+    box-shadow: 2px 3px 6px 4px var(--shadow);
+    width: fit-content;
+}
+
+@media (max-width: 600px) {
+    .container, .container div{
+        justify-content: center;
+    }
+}

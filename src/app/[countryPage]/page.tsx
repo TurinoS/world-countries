@@ -5,7 +5,7 @@ import styles from '../../styles/CountryPage.module.css';
 import { usePathname } from 'next/navigation';
 import { MdOutlineKeyboardBackspace } from 'react-icons/md';
 
-const getData = async (name: string) => {   
+const getCountryData = async (name: string) => {   
     
   const data = await fetch(`https://restcountries.com/v3.1/name/${name}`);
 
@@ -19,8 +19,7 @@ const getData = async (name: string) => {
 export default async function CountryPage() {
 
   const pathname = usePathname();
-
-  const countryData = await getData(pathname)
+  const countryData = await getCountryData(pathname)
 
   const countryInfo = [
     countryData[0].name.official, 
@@ -54,9 +53,9 @@ export default async function CountryPage() {
           <ul>
             {countryInfo[6] ? countryInfo[6].map((item: string ) => (
               <li key={countryInfo[1]}>
-                <Link href={`/${countryInfo[7]}`}>{item}</Link>
+                <Link href={`/country/${countryInfo[7]}`}>{item}</Link>
               </li>
-            )) : <p>{countryInfo[0]} is an island</p>}
+            )) : <p key={countryInfo[1]}>{countryInfo[0]} is an island</p>}
           </ul>
           </div>
       </div>
